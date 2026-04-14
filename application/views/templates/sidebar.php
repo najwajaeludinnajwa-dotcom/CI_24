@@ -19,9 +19,11 @@
 <hr class="sidebar-divider my-0">
 
 <li class="nav-item">
-    <a class="nav-link" href="<?= site_url('kategori') ?>">
+    <a class="nav-link" href="<?= site_url('index.php/anggota')?>">
         <i class="fas fa-box"></i>
-        <span>Kategori</span>
+        <span>Anggota
+            
+        </span>
     </a>
 </li>
 
