@@ -1,8 +1,8 @@
 <div class="container-fluid">
 
-<h2 class="h3 mb-4 text_gray-800">Data Kategori</h2>
+<h2 class="h3 mb-4 text_gray-800">Data Anggota</h2>
 
-<a href="<?= site_url('index.php/kategori/tambah'); ?>" class="btn btn-primary mb-3">Tambah</a>
+<a href="<?= site_url('index.php/anggota/tambah'); ?>" class="btn btn-primary mb-3">Tambah</a>
 
 <div class="card shadow mb-4">
     <div class="card-body">
