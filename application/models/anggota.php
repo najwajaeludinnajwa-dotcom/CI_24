@@ -26,17 +26,17 @@ class Anggota {
         return $stmt->execute();
     }
 
-    public static function delete($id) {
+    public static function delete($No anggota) {
         global $conn;
-        return $conn->query("DELETE FROM anggota WHERE id=$id");
+        return $conn->query("DELETE FROM anggota WHERE id=$No anggota");
     }
 
     public static function find($id) {
         global $conn;
-        return $conn->query("SELECT * FROM anggota WHERE id=$id")->fetch_assoc();
+        return $conn->query("SELECT * FROM anggota WHERE id=$No anggota")->fetch_assoc();
     }
 
-    public static function update($id, $data) {
+    public static function update($No anggota, $data) {
         global $conn;
         $stmt = $conn->prepare("UPDATE anggota SET 
             nomor_anggota=?, nama=?, alamat=?, telepon=?, email=?, tanggal_daftar=? 
