@@ -1,0 +1,19 @@
+<?php
+defined('BASEPATH') OR exit('No direct script acces allowed');
+
+class peminjaman_model extends CI_Model {
+
+public function get_all()
+{
+    $this->db->select('peminjaman.*,anggota.nama');
+    $this->db->from('peminjaman');
+    $this->db->join('anggota', 'anggota.id = peminjaman.anggota_id');
+    return $this->db->get()->result();
+}
+
+public function insert($data, $buku_id)
+{
+    $this->db->insert('peminjaman', $data);
+    $peminjaman_id = $this->db->insert_id
+}
+]
