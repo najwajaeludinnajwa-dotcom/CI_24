@@ -10,49 +10,50 @@
 <script src="<?= base_url('assets/js/sb-admin-2.min.js');?>"></script>
 
 <script>
-    $(document).ready(function(){
-        $('#dataTable').DataTable({
-            "language": {
-                "search": "Cari:",
-                "lengthMenu": "Tampilkan _MENU_ data",
-                "info": "Menampilkan _START_ sampai _END_ dengan _TOTAL_ data",
-                "paginate":{
-                    "previous": "Sebelumnya",
-                    "next": "Berikutnya"
-                }
-            }
-        });
-    });
-    </script>
-    <script>
-    var ctx = document.getElementById("chartDashboard");
-    var chart = new Chart(ctx,{
-        type: 'bar',
-        data: {
-            labels:['Buku','Anggota']
-            datasets:[{
-                labels:'Jumlah Data',
-                data:[
-                    <?= $total_buku; ?>
-                    <?= $total_anggota; ?>
-                ],
-                backgroundColor:[
-                    '#4e73df',
-                    '#1cc88a'
-                ]
-            }]
-        },
-        options:{
-            responsive: true,
-            scales:{
-                yAxes:[{
-                    ticks:{
-                        beginAtZero: true
-                    }
-                }]
+$(document).ready(function() {
+    $('#dataTable').DataTable({
+        "language": {
+            "search": "Cari:",
+            "lengthMenu": "Tampilkan _MENU_ data",
+            "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Berikutnya"
             }
         }
-})
-    </script>
+    });
+});
+</script>
+
+<script>
+var ctx = document.getElementById("chartDashboard").getContext('2d');
+var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Buku', 'Anggota'],
+        datasets: [{
+            label: 'Jumlah Data',
+            data: [
+                <?= $total_buku; ?>,
+                <?= $total_anggota; ?>
+            ],
+            backgroundColor: [
+                '#4e73df',
+                '#1cc88a'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
 </body>
 </html>
